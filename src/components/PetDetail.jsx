@@ -10,7 +10,7 @@ const PetDetail = () => {
   useEffect(() => {
     const fetchPetDetails = async () => {
       try {
-        const response = await axios.get(`https://project-backend-16.onrender.com/api/pets/${id}`);
+        const response = await axios.get(`https://project-backend-17.onrender.com/api/pets/${id}`);
         setPetDetails(response.data);
       } catch (err) {
         setError('Pet not found');
