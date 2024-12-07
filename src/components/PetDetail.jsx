@@ -10,14 +10,13 @@ const PetDetail = () => {
   useEffect(() => {
     const fetchPetDetails = async () => {
       try {
-        const response = await axios.get(`https://localhost:5000/api/pets/${id}`);
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/pets/${id}`);
         setPetDetails(response.data);
       } catch (err) {
         setError('Pet not found');
         console.error(err);
       }
     };
-
     fetchPetDetails();
   }, [id]);
 
