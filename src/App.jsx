@@ -8,7 +8,7 @@ import FeedbackPage from './pages/FeedbackPage'; // Import FeedbackPage
 import PetList from './components/PetList';
 import Navbar from './components/Navbar';
 import PetDetails from './components/PetDetail';
-
+import ResetPassword from './components/ResetPassword';
 const App = () => {
   return (
     <Router>
@@ -22,8 +22,8 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/profile" element={<UserProfilePage />} />
         <Route path="/feedback" element={<FeedbackPage />} /> {/* Add Feedback route */}
+        <Route path="/reset-password" element={<ResetPassword />} />
       </Routes>
     </Router>
   );
-};
-export default App;
+};export default App;

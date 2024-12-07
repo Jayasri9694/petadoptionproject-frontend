@@ -33,6 +33,8 @@ const LoginForm = () => {
             required
           />
         </div>
+        <br/>
+        <br/>
         <div>
           <label htmlFor="password">Password:</label>
           <input
@@ -43,6 +45,8 @@ const LoginForm = () => {
             required
           />
         </div>
+        <br/>
+        <br/>
         <button type="submit">connect</button>
       </form>
     </div>
