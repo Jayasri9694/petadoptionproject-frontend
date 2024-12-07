@@ -35,6 +35,7 @@ const PetList = () => {
                             padding: '15px',
                             maxWidth: '300px',
                             textAlign: 'center',
+                            color:"grey"
                         }}
                     >
                         <h3>{pet.name}</h3>
