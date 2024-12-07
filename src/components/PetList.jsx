@@ -1,42 +1,32 @@
-import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 const PetList = () => {
-  const [pets, setPets] = useState([]);
-  const [error, setError] = useState(null);
+   const [pets, setPets] = useState([]);
 
-  useEffect(() => {
-    const fetchPets = async () => {
-      try {
-        const response = await axios.get('https://localhost:5000/api/pets');
-        setPets(response.data);
-      } catch (err) {
-        setError('Error fetching pets');
-        console.error(err);
-      }
-    };
+   const fetchPets = async () => {
+       try {
+           const response = await axios.get('http://localhost:5000/api/pets');
+           setPets(response.data); // Assuming the API returns a list of pets
+       } catch (error) {
+           console.error('Error fetching pets:', error);
+       }
+   };
 
-    fetchPets();
-  }, []);
+   useEffect(() => {
+       fetchPets();
+   }, []);
 
-  return (
-    <div>
-      {error && <div>{error}</div>}
-      <h1>Available Pets</h1>
-      <ul>
-        {pets.map((pet) => (
-          <li key={pet._id}>
-            <h2>{pet.name}</h2>
-            <p>{pet.description}</p>
-            <p>{pet.age} years old</p>
-            <p>Breed: {pet.breed}</p>
-            <p>Status: {pet.adoptionStatus ? 'Available' : 'Adopted'}</p>
-            <img src={pet.imageUrl} alt={pet.name} width="100" />
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+   return (
+       <div>
+           <h1>Pet List</h1>
+           <ul>
+               {pets.map((pet) => (
+                   <li key={pet.id}>{pet.name}</li>
+               ))}
+           </ul>
+       </div>
+   );
 };
 
 export default PetList;
