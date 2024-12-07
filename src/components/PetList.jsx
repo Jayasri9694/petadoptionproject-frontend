@@ -8,7 +8,7 @@ const PetList = () => {
   useEffect(() => {
     const fetchPets = async () => {
       try {
-        const response = await axios.get('https://project-backend-17.onrender.com/api/pets');
+        const response = await axios.get('https://localhost:5000/api/pets');
         setPets(response.data);
       } catch (err) {
         setError('Error fetching pets');
