@@ -5,11 +5,11 @@ const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/login', { email, password });
+      const response = await axios.post(`${API_URL}/login`, { email, password });
       console.log('Login successful:', response.data);
       // Handle successful login (e.g., redirect or store token)
     } catch (err) {
@@ -51,6 +51,9 @@ const LoginForm = () => {
       </form>
     </div>
   );
+
+
+
 };
 
 export default LoginForm;
