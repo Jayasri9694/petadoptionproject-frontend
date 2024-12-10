@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Formik, Field, Form } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const PetForm = () => {
   const [image, setImage] = useState(null);
@@ -21,7 +22,7 @@ const PetForm = () => {
     if (image) formData.append("image", image);
 
     try {
-      const response = await axios.post("http://localhost:5000/api/pets", formData, {
+      const response = await axios.post(`${apiUrl}/api/pets`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

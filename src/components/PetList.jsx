@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import PetCard from "./PetCard";
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const PetList = () => {
   const [pets, setPets] = useState([]); // Initialize as an empty array
@@ -11,7 +12,7 @@ const PetList = () => {
   useEffect(() => {
     const fetchPets = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/pets");
+        const response = await axios.get(`${apiUrl}/api/pets`);
         const petsData = response.data;
 
         // Ensure the response data is an array

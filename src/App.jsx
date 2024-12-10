@@ -11,7 +11,6 @@ import ApplicationForm from "./components/ApplicationForm";
 import Logout from "./components/Logout";
 import PetForm from "./components/PetForm";
 import About from "./components/About";
-import FeedbackForm from "./components/FeedbackForm";
 const App = () => {
   return (
     <AuthProvider>
@@ -27,7 +26,6 @@ const App = () => {
           <Route path="/logout" element={<Logout />} />
           <Route path="/petform" element={<PetForm />} />
           <Route path="about" element={<About />} />
-          <Route path="FeedbackForm" element={<FeedbackForm />} />
         </Routes>
         </div>
       </Router>

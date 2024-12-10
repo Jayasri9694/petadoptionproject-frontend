@@ -17,7 +17,6 @@ const Navbar = () => {
         <li><a href="/logout">Logout</a></li>
         <li><a href="/application">ApplicationForm</a></li>
         <li><a href="/about">about</a></li>
-        <li><a href="/Feedbackform">FeedbackForm</a></li>
       </ul>
     </nav>
   );
