@@ -6,10 +6,10 @@ import "./Register.css"; // Import custom CSS for styling
 const Register = () => {
   const handleSubmit = async (values) => {
     try {
-      const response = await axios.post("/api/users/register", values);
-      alert(response.data.message);
+      const response = await axios.post('http://localhost:5000/api/users/register', values);
+      console.log(response.data); // Handle successful response
     } catch (error) {
-      console.error(error);
+      console.error('Error registering user:', error);
     }
   };
 

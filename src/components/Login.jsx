@@ -10,7 +10,7 @@ const Login = () => {
 
   const handleSubmit = async (values, { setSubmitting, setErrors }) => {
     try {
-      const response = await axios.post("/api/users/login", values);
+      const response = await axios.post("http://localhost:5000/api/users/login", values);
       login(response.data.user); // Call the context function to set the logged-in user
       alert("Logged in successfully");
     } catch (error) {
