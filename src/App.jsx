@@ -19,15 +19,15 @@ const App = () => {
         <Navbar/>
         <div className="content">
         <Routes>
-          <Route path="/" component={<Home />} />
-          <Route path="/adopt" component={<AdoptPet />} />
-          <Route path="/register" component={<Register />} />
-          <Route path="/login" component={<Login />} />
-          <Route path="/application" component={<ApplicationForm />} />
-          <Route path="/logout" component={<Logout />} />
-          <Route path="/petform" component={<PetForm />} />
-          <Route path="about" component={<About />} />
-          <Route path="FeedbackForm" component={<FeedbackForm />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/adopt" element={<AdoptPet />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/application" element={<ApplicationForm />} />
+          <Route path="/logout" element={<Logout />} />
+          <Route path="/petform" element={<PetForm />} />
+          <Route path="about" element={<About />} />
+          <Route path="FeedbackForm" element={<FeedbackForm />} />
         </Routes>
         </div>
       </Router>
