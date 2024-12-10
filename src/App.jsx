@@ -1,28 +1,37 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import LoginPage from './pages/LoginPage';
-import RegisterPage from './pages/RegisterPage';
-import About from './components/About';
-import UserProfilePage from './pages/UserProfilePage';
-import FeedbackPage from './pages/FeedbackPage'; // Import FeedbackPage
-import PetList from './components/PetList';
-import Navbar from './components/Navbar';
-import PetDetails from './components/PetDetail';
+// React import removed as it's not used in this file
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import AdoptPet from "./pages/AdoptPet";
+import Register from "./components/Register";
+import Login from "./components/Login";
+import { AuthProvider } from "/context/AuthContext";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from "./components/Navbar";
+import ApplicationForm from "./components/ApplicationForm";
+import Logout from "./components/Logout";
+import PetForm from "./components/PetForm";
+import About from "./components/About";
+import FeedbackForm from "./components/FeedbackForm";
 const App = () => {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/pets" element={<PetList />} />
-        <Route path="/pets/:id" element={<PetDetails />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/profile" element={<UserProfilePage />} />
-        <Route path="/feedback" element={<FeedbackPage />} /> {/* Add Feedback route */}
-        
-      </Routes>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <Navbar/>
+        <div className="content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/adopt" element={<AdoptPet />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/application" element={<ApplicationForm />} />
+          <Route path="/logout" element={<Logout />} />
+          <Route path="/petform" element={<PetForm />} />
+          <Route path="about" element={<About />} />
+          <Route path="FeedbackForm" element={<FeedbackForm />} />
+        </Routes>
+        </div>
+      </Router>
+    </AuthProvider>
   );
-};export default App;
+};
+export default App;

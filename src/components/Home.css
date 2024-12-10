@@ -1,0 +1,37 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+  }
+  
+  body {
+    background-image: url('https://w0.peakpx.com/wallpaper/1/731/HD-wallpaper-pets-animals-puppy-kitten.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .banner {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+    padding: 20px;
+    border-radius: 10px;
+    color:white;
+  }
+
+
+  .banner h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+
+
+  .banner p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }

@@ -1,35 +1,29 @@
-// src/components/About.jsx
-import React from 'react';
-import './About.css'; // Optional: import a CSS file for styling
+// import React from "react";
+import "../components/About.css"; // Import the CSS file for styling
 
 const About = () => {
   return (
-    <div className="about-container">
-      <h1>About Us</h1>
-      <p>
-        Welcome to the Pet Adoption Platform, where we connect loving homes with
-        pets in need of a forever family. Our mission is to facilitate the
-        adoption of pets and to promote the responsible ownership of animals.
-      </p>
-      <h2>Our Mission</h2>
-      <p>
-        We believe that every pet deserves a loving home. Our platform provides
-        an easy and efficient way for pet owners to list their pets for adoption
-        and for potential adopters to find their perfect companion.
-      </p>
-      <h2>What We Offer</h2>
-      <ul>
-        <li>Easy pet listings with detailed information</li>
-        <li>Search and filter options to find the right pet</li>
-        <li>Application process for interested adopters</li>
-        <li>Support and resources for pet care</li>
-      </ul>
-      <h2>Join Us</h2>
-      <p>
-        Whether you're looking to adopt a pet or give up a pet for adoption,
-        we're here to help. Together, we can make a difference in the lives of
-        pets and their future families.
-      </p>
+    <div className="about-container-full">
+      <div className="banner">
+        <h1 className="title">About Us - Pet Adoption Platform</h1>
+        <p className="subtitle">
+          Our mission is to connect loving homes with pets in need of a forever family.
+        </p>
+      </div>
+      <div className="features">
+        <h2 className="feature-title">Why Choose Us?</h2>
+        <ul className="feature-list">
+          <li>Facilitating responsible pet adoption</li>
+          <li>Providing detailed pet profiles for informed decisions</li>
+          <li>Promoting a loving and caring environment for pets</li>
+        </ul>
+      </div>
+      <div className="mission">
+        <h2 className="mission-title">Our Mission</h2>
+        <p>
+          We believe every pet deserves a loving home. Our platform provides an easy way for pet owners to list their pets for adoption, and for potential adopters to find their perfect companion.
+        </p>
+      </div>
     </div>
   );
 };

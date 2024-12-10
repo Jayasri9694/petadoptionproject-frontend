@@ -1,0 +1,47 @@
+/* Register.css */
+.register-container {
+    background-image: url('https://www.bing.com/images/search?view=detailV2&ccid=hzshaz8g&id=4DAA92354BB31933130BDC4FAFB2CD982AA99896&thid=OIP.hzshaz8gPgGFCZ_fgjM6iQHaFN&mediaurl=https%3A%2F%2Fimg.freepik.com%2Fpremium-vector%2Fadopt-pet-from-animal-shelter-form-cats-dogs-care-flat-cartoon-illustration_2175-9527.jpg%3Fw%3D2000&exph=1407&expw=2000&q=adopt+a+pet+image&simid=608029840892713212&FORM=IRPRST&ck=BD7E82F35CABF5618F93B3F507468B1A&selectedIndex=0&itb=0&cw=689&ch=662&ajaxhist=0&ajaxserp=0'); /* Replace with your wallpaper URL */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .register-form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .error-text {
+    color: red;
+    font-size: 0.9rem;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  

@@ -1,47 +1,80 @@
-// src/components/FeedbackForm.jsx
-import { useState } from 'react';
+import { useContext } from "react";import { Formik, Form, Field } from "formik";
+import { AuthContext } from "/context/AuthContext";  // Adjust the path if needed
+import * as Yup from "yup";
+import axios from "axios";
+import "./FeedbackForm.css";  // Custom CSS for styling
 
 const FeedbackForm = () => {
-  const [name, setName] = useState('');
-  const [feedback, setFeedback] = useState('');
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // You can implement a submission logic here, e.g., sending the feedback to an API
-    console.log('Feedback submitted:', { name, feedback });
-    setSubmitted(true);
+  const { auth } = useContext(AuthContext); // Accessing user data from AuthContext
+  
+  const handleSubmit = async (values, { setSubmitting, setErrors }) => {
+    try {
+      const response = await axios.post("/api/feedback", {
+        userId: auth?.id,  // If user is logged in, send their user ID
+        name: values.name,
+        feedback: values.feedback,
+      });
+      alert("Feedback submitted successfully!");
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+      setErrors({ server: error.response?.data?.message || "Something went wrong" });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
-    <div>
-      <h2>Feedback Form</h2>
-      {submitted ? (
-        <p>Thank you for your feedback!</p>
-      ) : (
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="name">Name:</label>
-            <input
-              type="text"
-              id="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="feedback">Feedback:</label>
-            <textarea
-              id="feedback"
-              value={feedback}
-              onChange={(e) => setFeedback(e.target.value)}
-              required
-            />
-          </div>
-          <button type="submit">Submit Feedback</button>
-        </form>
-      )}
+    <div className="feedback-container">
+      <div className="feedback-form">
+        <h1>Feedback Form</h1>
+        <Formik
+          initialValues={{ name: "", feedback: "" }}
+          validationSchema={Yup.object({
+            name: Yup.string().required("Name is required"),
+            feedback: Yup.string().required("Feedback is required").min(10, "Feedback must be at least 10 characters long"),
+          })}
+          onSubmit={handleSubmit}
+        >
+          {({ errors, touched, isSubmitting }) => (
+            <Form>
+              {errors.server && <div className="error-text">{errors.server}</div>}
+              
+              <div className="form-group">
+                <Field
+                  name="name"
+                  type="text"
+                  placeholder="Your Name"
+                  className="form-control"
+                />
+                {errors.name && touched.name && (
+                  <div className="error-text">{errors.name}</div>
+                )}
+              </div>
+
+              <div className="form-group">
+                <Field
+                  name="feedback"
+                  as="textarea"
+                  placeholder="Your Feedback"
+                  className="form-control"
+                />
+                {errors.feedback && touched.feedback && (
+                  <div className="error-text">{errors.feedback}</div>
+                )}
+              </div>
+
+              <button
+                type="submit"
+                className="btn btn-primary"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Submitting..." : "Submit Feedback"}
+              </button>
+            </Form>
+          )}
+        </Formik>
+      </div>
     </div>
   );
 };
