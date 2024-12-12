@@ -2,11 +2,11 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import "./Register.css"; // Import custom CSS for styling
-const apiUrl = import.meta.env.VITE_API_URL;
+
 const Register = () => {
   const handleSubmit = async (values) => {
     try {
-      const response = await axios.post(`${apiUrl}/api/users/register`, values);
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/users/register`, values);
       console.log(response.data); // Handle successful response
     } catch (error) {
       console.error('Error registering user:', error);

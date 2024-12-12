@@ -4,13 +4,12 @@ import { AuthContext } from "/context/AuthContext";
 import * as Yup from "yup";
 import axios from "axios";
 import "./Login.css"; // Custom CSS for styling
-const apiUrl = import.meta.env.VITE_API_URL;
 const Login = () => {
   const { login } = useContext(AuthContext);
 
   const handleSubmit = async (values, { setSubmitting, setErrors }) => {
     try {
-      const response = await axios.post(`${apiUrl}/api/users/login`, values);
+      const response = await axios.post('https://pet-backend-12.onrender.com/api/users/login', values);
       login(response.data.user); // Call the context function to set the logged-in user
       alert("Logged in successfully");
     } catch (error) {
