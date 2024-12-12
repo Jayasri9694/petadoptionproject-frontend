@@ -6,7 +6,7 @@ import "./Register.css"; // Import custom CSS for styling
 const Register = () => {
   const handleSubmit = async (values) => {
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/users/register`, values);
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/users/register`, values);
       console.log(response.data); // Handle successful response
     } catch (error) {
       console.error('Error registering user:', error);
