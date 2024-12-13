@@ -11,7 +11,7 @@ const PetList = () => {
   useEffect(() => {
     const fetchPets = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/pets`);
+        const response = await axios.get('http://localhost:5000/api/pets');
         const petsData = response.data;
 
         // Ensure the response data is an array
