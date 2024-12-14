@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import PetCard from "./PetCard";
-
+const API_BASE_URL = process.env.REACT_APP_BACKEND_URL;
 const PetList = () => {
   const [pets, setPets] = useState([]); // Initialize as an empty array
   const [searchTerm, setSearchTerm] = useState("");
@@ -11,7 +11,7 @@ const PetList = () => {
   useEffect(() => {
     const fetchPets = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/pets');
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/pets`);
         const petsData = response.data;
 
         // Ensure the response data is an array

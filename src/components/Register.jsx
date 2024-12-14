@@ -2,11 +2,11 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import "./Register.css"; // Import custom CSS for styling
-
+const API_BASE_URL = process.env.REACT_APP_BACKEND_URL;
 const Register = () => {
   const handleSubmit = async (values) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/users/register', values);
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/users/register`, values);
       console.log(response.data); // Handle successful response
     } catch (error) {
       console.error('Error registering user:', error);
