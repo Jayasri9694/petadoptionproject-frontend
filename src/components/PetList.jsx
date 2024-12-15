@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import PetCard from "./PetCard";
-const API_BASE_URL = process.env.REACT_APP_BACKEND_URL;
+import "./PetList.css"; // Import the CSS file for styling
 const PetList = () => {
   const [pets, setPets] = useState([]); // Initialize as an empty array
   const [searchTerm, setSearchTerm] = useState("");
@@ -11,7 +11,7 @@ const PetList = () => {
   useEffect(() => {
     const fetchPets = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/pets`);
+        const response = await axios.get("http://localhost:5000/api/pets");
         const petsData = response.data;
 
         // Ensure the response data is an array
@@ -46,6 +46,27 @@ const PetList = () => {
     }
   }, [searchTerm, pets]);
 
+  // Handle adoption
+  const handleAdopt = async (pet) => {
+    try {
+      const response = await axios.post(`http://localhost:5000/api/adopt`, {
+        petId: pet._id,
+      });
+
+      if (response.status === 200) {
+        alert(`You have successfully adopted ${pet.name}!`);
+        // Remove adopted pet from the list
+        setPets((prevPets) => prevPets.filter((p) => p._id !== pet._id));
+        setFilteredPets((prevFilteredPets) =>
+          prevFilteredPets.filter((p) => p._id !== pet._id)
+        );
+      }
+    } catch (error) {
+      console.error("Error adopting pet:", error);
+      alert("Failed to adopt the pet. Please try again.");
+    }
+  };
+
   return (
     <div className="container mt-5">
       <h1 className="text-center mb-4">Available Pets for Adoption</h1>
@@ -62,7 +83,7 @@ const PetList = () => {
         {Array.isArray(filteredPets) && filteredPets.length > 0 ? (
           filteredPets.map((pet) => (
             <div className="col-md-4 mb-4" key={pet._id}>
-              <PetCard pet={pet} />
+              <PetCard pet={pet} onAdopt={handleAdopt} />
             </div>
           ))
         ) : (

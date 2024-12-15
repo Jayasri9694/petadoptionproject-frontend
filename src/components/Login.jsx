@@ -4,13 +4,13 @@ import { AuthContext } from "/context/AuthContext";
 import * as Yup from "yup";
 import axios from "axios";
 import "./Login.css"; // Custom CSS for styling
-const API_BASE_URL = process.env.REACT_APP_BACKEND_URL;
+
 const Login = () => {
   const { login } = useContext(AuthContext);
 
   const handleSubmit = async (values, { setSubmitting, setErrors }) => {
     try {
-      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/users/login`, values);
+      const response = await axios.post('http://localhost:5000/api/users/login', values);
       login(response.data.user); // Call the context function to set the logged-in user
       alert("Logged in successfully");
     } catch (error) {
