@@ -1,4 +1,0 @@
-[[redirects]]
-from = "/api/*"
-to = "https://api.github.com/:splat"
-status = 200
