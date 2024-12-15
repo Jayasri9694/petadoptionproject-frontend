@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import AdoptPetForm from "./AdoptPetForm";
 import PetList from "./PetList";  // Assuming PetList is the component you're using
 import "./AdoptPet.css";  // Import the CSS file for styling
+
+
 const AdoptPet = () => {
   const [pets, setPets] = useState([]);  // Initialize pets with an empty array or fetch data
 
@@ -9,7 +11,7 @@ const AdoptPet = () => {
     // Fetching pets data from the API
     const fetchPets = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/pets");
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/pets`);
         const data = await response.json();
         setPets(data);  // Update pets state with the fetched data
       } catch (error) {

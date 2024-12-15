@@ -22,7 +22,7 @@ const PetCard = ({ pet, onAdopt }) => {
           return;
         }
 
-        const response = await fetch("http://localhost:5000/api/adopt", {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/adopt`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
