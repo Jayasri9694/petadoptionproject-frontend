@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import PetCard from "./PetCard";
+const apibaseurl = "https://backend-petadoption-4.onrender.com"
 import "./PetList.css"; // Import the CSS file for styling
 const PetList = () => {
   const [pets, setPets] = useState([]); // Initialize as an empty array
@@ -11,7 +12,7 @@ const PetList = () => {
   useEffect(() => {
     const fetchPets = async () => {
       try {
-        const response = await axios.get('https://backend-petadoption-4.onrender.com/api/pets');
+        const response = await axios.get(`${apibaseurl}/api/pets`);
         const petsData = response.data;
 
         // Ensure the response data is an array
@@ -49,7 +50,7 @@ const PetList = () => {
   // Handle adoption
   const handleAdopt = async (pet) => {
     try {
-      const response = await axios.post(`http://localhost:5000/api/adopt`, {
+      const response = await axios.post(`${apibaseurl}/api/adopt`, {
         petId: pet._id,
       });
 

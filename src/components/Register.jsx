@@ -1,13 +1,13 @@
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-
+const apibaseurl = "https://backend-petadoption-4.onrender.com"
 import "./Register.css"; // Import custom CSS for styling
 
 const Register = () => {
   const handleSubmit = async (values) => {
     try {
-      const response = await axios.post('https://backend-petadoption-4.onrender.com/api/users/register', values);
+      const response = await axios.post(`${apibaseurl}/api/users/register`, values);
       console.log(response.data); // Handle successful response
     } catch (error) {
       console.error('Error registering user:', error);

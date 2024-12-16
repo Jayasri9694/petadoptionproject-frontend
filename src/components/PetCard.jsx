@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+const apibaseurl = "https://backend-petadoption-4.onrender.com"
 
 const PetCard = ({ pet, onAdopt }) => {
   const [loading, setLoading] = useState(false);
@@ -22,7 +23,7 @@ const PetCard = ({ pet, onAdopt }) => {
           return;
         }
 
-        const response = await fetch('https://backend-petadoption-4.onrender.com/api/adopt', {
+        const response = await fetch(`${apibaseurl}/api/adopt`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
