@@ -1,0 +1,101 @@
+/* Container for the pet details page */
+.pet-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Title of the pet details page */
+  .pet-details h2 {
+    font-size: 2.5rem;
+    font-weight: bold; /* Makes the title bold */
+    margin-bottom: 15px;
+    color: #010101;
+  }
+  
+  /* Styling for the image of the pet */
+  .pet-details-image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  /* Container for the details of the pet */
+  .pet-details .pet-info {
+    max-width: 600px;
+    width: 100%;
+    text-align: left;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style for each label in pet information */
+  .pet-details .pet-info p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #040303;
+  }
+  
+  /* Highlight labels to make them stand out and bold */
+  .pet-details .pet-info p strong {
+    font-weight: bold; /* Makes the labels bold */
+    color: #333;
+  }
+  
+  /* Bold the breed and age labels */
+  .pet-details .pet-info p .breed,
+  .pet-details .pet-info p .age {
+    font-weight: bold;
+  }
+  
+  /* Button to adopt the pet */
+  .pet-details .adopt-btn {
+    background-color: #28a745;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Make the button text bold */
+  .pet-details .adopt-btn {
+    font-weight: bold; /* Bold the button text */
+  }
+  
+  .pet-details .adopt-btn:hover {
+    background-color: #218838;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .pet-details .pet-info {
+      width: 100%;
+      padding: 15px;
+    }
+  
+    .pet-details h2 {
+      font-size: 2rem;
+    }
+  
+    .pet-details-image {
+      width: 250px;
+      height: 250px;
+    }
+  
+    .pet-details .adopt-btn {
+      width: 100%;
+      font-size: 1rem;
+    }
+  }
+  

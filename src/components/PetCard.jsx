@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
-const apibaseurl = "https://backend-petadoption-4.onrender.com"
+import { Link } from "react-router-dom"; // Import Link from react-router-dom for navigation
+
+const apibaseurl = "https://backend-petadoption-4.onrender.com";
 
 const PetCard = ({ pet, onAdopt }) => {
   const [loading, setLoading] = useState(false);
@@ -45,6 +47,8 @@ const PetCard = ({ pet, onAdopt }) => {
             breed: pet.breed,
             age: pet.age,
             temperament: pet.temperament,
+            adoptionFee: pet.adoptionFee, // If you want to show adoption fee, assuming it exists
+            healthStatus: pet.healthStatus, // Assuming health status is available
           });
           alert(`Successfully adopted ${pet.name}!`);
           onAdopt(pet);  // Call the onAdopt function to update parent state if needed
@@ -77,6 +81,10 @@ const PetCard = ({ pet, onAdopt }) => {
           Age: {pet.age} years <br />
           Temperament: {pet.temperament}
         </p>
+
+        {/* Link to Pet Details Page */}
+        <Link to={`/pet-details/${pet._id}`} className="btn btn-info">View Details</Link>
+
         <button
           className="btn btn-primary"
           onClick={handleAdopt}
@@ -95,6 +103,12 @@ const PetCard = ({ pet, onAdopt }) => {
             <p><strong>Breed:</strong> {adoptionDetails.breed}</p>
             <p><strong>Age:</strong> {adoptionDetails.age} years</p>
             <p><strong>Temperament:</strong> {adoptionDetails.temperament}</p>
+            {adoptionDetails.adoptionFee && (
+              <p><strong>Adoption Fee:</strong> ${adoptionDetails.adoptionFee}</p>
+            )}
+            {adoptionDetails.healthStatus && (
+              <p><strong>Health Status:</strong> {adoptionDetails.healthStatus}</p>
+            )}
           </div>
         )}
       </div>
@@ -110,6 +124,8 @@ PetCard.propTypes = {
     breed: PropTypes.string.isRequired,
     age: PropTypes.number.isRequired,
     temperament: PropTypes.string.isRequired,
+    adoptionFee: PropTypes.number, // Optional: if you have adoption fee
+    healthStatus: PropTypes.string, // Optional: if you want to show health status
   }).isRequired,
   onAdopt: PropTypes.func.isRequired, // Function prop for adoption
 };

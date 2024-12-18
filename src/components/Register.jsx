@@ -1,16 +1,21 @@
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-const apibaseurl = "https://backend-petadoption-4.onrender.com"
+import { useNavigate } from "react-router-dom";
 import "./Register.css"; // Import custom CSS for styling
 
+const apibaseurl = "https://backend-petadoption-4.onrender.com";
+
 const Register = () => {
+  const navigate = useNavigate();
+
   const handleSubmit = async (values) => {
     try {
       const response = await axios.post(`${apibaseurl}/api/users/register`, values);
       console.log(response.data); // Handle successful response
+      navigate("/login"); // Redirect to login page after registration
     } catch (error) {
-      console.error('Error registering user:', error);
+      console.error("Error registering user:", error);
     }
   };
 
@@ -65,12 +70,13 @@ const Register = () => {
               <button type="submit" className="btn btn-primary">
                 Register
               </button>
-              <p>Already have an account? <a href="/login">Login here</a></p>
+              <p>
+                Already have an account? <a href="/login">Login here</a>
+              </p>
             </Form>
           )}
         </Formik>
       </div>
-      
     </div>
   );
 };

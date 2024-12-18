@@ -1,27 +1,21 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Logout = () => {
+const Logout = ({ setIsAuthenticated }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Clear user authentication data
+    // Clear the auth token from localStorage
     localStorage.removeItem("authToken");
-    localStorage.removeItem("user");
-    
-    // Optionally show a logout confirmation
-    alert("You have been logged out successfully!");
 
-    // Redirect to the login page
+    // Set authentication state to false
+    setIsAuthenticated(false);
+
+    // Redirect to the login page after logout
     navigate("/login");
-  }, [navigate]);
+  }, [setIsAuthenticated, navigate]);
 
-  return (
-    <div className="logout-container">
-      <h1>Logging Out...</h1>
-      <p>Redirecting you to the login page.</p>
-    </div>
-  );
+  return null; // No UI needed since we are redirecting immediately
 };
 
 export default Logout;

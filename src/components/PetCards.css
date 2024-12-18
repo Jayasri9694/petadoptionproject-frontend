@@ -1,0 +1,46 @@
+/* PetCards.css */
+.pet-cards-container {
+    display: flex;
+    flex-wrap: nowrap;  /* Keep the cards in a single row */
+    overflow-x: auto;   /* Allow horizontal scrolling if the row exceeds the container's width */
+    padding: 10px;
+    gap: 20px;  /* Space between pet cards */
+  }
+  
+  .pet-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px; /* Width of each pet card */
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .pet-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ensure the image fits the container */
+    border-radius: 5px;
+  }
+  
+  .pet-info h3 {
+    margin: 10px 0;
+  }
+  
+  .adopt-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .adopt-btn:hover {
+    background-color: #45a049;
+  }
+  
