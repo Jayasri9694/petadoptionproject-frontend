@@ -1,10 +1,8 @@
 // import React from "react";
 import "../components/Home.css"; 
 
-
 const Home = () => {
   return (
-     
       <div className="home-container-full">
         
         <div className="banner">
