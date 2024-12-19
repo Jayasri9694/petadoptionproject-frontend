@@ -1,6 +1,5 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom'; // Hook to access passed state
-import "../components/petDetailsPage.css";
 const PetDetailsPage = () => {
   const location = useLocation();
   const { pet } = location.state || {}; // Retrieve pet data passed via state
