@@ -1,4 +1,3 @@
-// React import removed as it's not used in this file
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Home from "./pages/Home";
 import AdoptPet from "./pages/AdoptPet";
@@ -24,7 +23,6 @@ const App = () => {
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/adopt-pet-form" element={<ApplicationForm />} />
-            <Route path="/logout" element={<Logout />} />
             <Route path="/petform" element={<PetForm />} />
             <Route path="/pet-details" element={<PetDetailsPage />} />  {/* Add route for PetDetailsPage */}
             <Route path="about" element={<About />} />

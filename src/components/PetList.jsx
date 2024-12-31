@@ -75,12 +75,10 @@ const PetList = () => {
         </button>
       </div>
 
-      {/* Pet list */}
       <div className="pet-list">
         {filteredPets.length > 0 ? (
           filteredPets.map((pet) => (
             <div className="pet-card" key={pet._id}>
-              <img src={pet.imageUrl} alt={pet.name} className="pet-image" />
               <div className="pet-info">
                 <h3>{pet.name}</h3>
                 <p>{pet.breed}</p>

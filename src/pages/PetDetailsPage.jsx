@@ -11,7 +11,6 @@ const PetDetailsPage = () => {
   return (
     <div className="pet-details">
       <h2>{pet.name}</h2>
-      <img src={pet.imageUrl || "https://classroomclipart.com/image/static7/preview1/brown-dog-animation-50799.jpg"} alt={pet.name} className="pet-details-image" />
       <p><strong>Breed:</strong> {pet.breed}</p>
       <p><strong>Age:</strong> {pet.age}</p>
       <p><strong>Temperament:</strong> {pet.temperament}</p>

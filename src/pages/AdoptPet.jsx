@@ -32,14 +32,11 @@ const AdoptPet = () => {
   return (
     <div className="adopt-pet-container">
       <h2>Adopt a Pet</h2>
-      {/* Passing pets and handlePetSelect as props to PetList component */}
       <PetList pets={pets} onPetSelect={handlePetSelect} />
 
-      {/* Conditionally render the ApplicationForm if a pet is selected */}
       {selectedPet && (
         <div className="application-form-container">
           <h3>Apply to Adopt {selectedPet.name}</h3>
-          {/* Pass selectedPet to the AdoptPetForm component */}
           <AdoptPetForm pet={selectedPet} />
         </div>
       )}

@@ -23,11 +23,8 @@ const Login = () => {
       if (response.data.token) {
         // Save token in localStorage
         localStorage.setItem("authToken", response.data.token);
-
-        // Update authentication state
         setIsAuthenticated(true);
 
-        // Redirect to home page
         navigate("/home");
       }
     } catch (error) {
