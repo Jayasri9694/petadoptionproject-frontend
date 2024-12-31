@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Register.css"; // Import custom CSS for styling
 
-const apibaseurl = "https://fsd-backend-ilvh.onrender.com";
+const apibaseurl = "https://adopt-backend-1.onrender.com";
 
 const Register = () => {
   const navigate = useNavigate();

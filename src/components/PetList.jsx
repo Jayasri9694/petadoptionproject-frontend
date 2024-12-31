@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // Hook for navigation
 import './PetList.css';  // Add your own CSS for styling
 
-const apibaseurl = "https://fsd-backend-ilvh.onrender.com"; // API base URL
+const apibaseurl = "https://adopt-backend-1.onrender.com"; // API base URL
 
 const PetList = () => {
   const [pets, setPets] = useState([]);  // State to hold the list of pets
