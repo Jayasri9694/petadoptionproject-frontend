@@ -1,6 +1,6 @@
 // Home.jsx
 import React from 'react';
-import "../components/Home.css"; // Correct import of CSS
+import "../components/Home.css"; 
 
 const Home = () => {
   return (

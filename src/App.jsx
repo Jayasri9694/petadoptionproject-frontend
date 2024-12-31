@@ -8,24 +8,27 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/Navbar";
 import ApplicationForm from "./components/ApplicationForm";
 import Logout from "./components/Logout";
-import PetForm from "./components/PetForm";
 import PetDetailsPage from "./pages/PetDetailsPage";
 import About from "./components/About";
+import AdoptionConfirmation from "./components/AdoptionConfirmation";
+
+
 const App = () => {
   return (
     <AuthProvider>
       <Router>
-        <Navbar />
+        <Navbar/>
         <div className="content">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/adopt" element={<AdoptPet />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
+           <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
             <Route path="/adopt-pet-form" element={<ApplicationForm />} />
-            <Route path="/petform" element={<PetForm />} />
-            <Route path="/pet-details" element={<PetDetailsPage />} />  {/* Add route for PetDetailsPage */}
+            <Route path="/adoption-confirmation" element={<AdoptionConfirmation/>} />
+            <Route path="/pet-details" element={<PetDetailsPage />} /> 
             <Route path="about" element={<About />} />
+            <Route path="/logout" element={<Logout />} />
           </Routes>
         </div>
       </Router>

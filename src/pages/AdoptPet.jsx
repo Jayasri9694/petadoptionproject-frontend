@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import AdoptPetForm from "../components/ApplicationForm.jsx";  // Import ApplicationForm component
 import "./AdoptPet.css";  // Import the CSS file for styling
 
-const apibaseurl = "https://backend-petadoption-4.onrender.com";  // API base URL
+const apibaseurl = "https://fsd-backend-ilvh.onrender.com";  // API base URL
 
 const AdoptPet = () => {
   const [pets, setPets] = useState([]);  // State to hold fetched pets
@@ -32,11 +32,14 @@ const AdoptPet = () => {
   return (
     <div className="adopt-pet-container">
       <h2>Adopt a Pet</h2>
+      {/* Passing pets and handlePetSelect as props to PetList component */}
       <PetList pets={pets} onPetSelect={handlePetSelect} />
 
+      {/* Conditionally render the ApplicationForm if a pet is selected */}
       {selectedPet && (
         <div className="application-form-container">
           <h3>Apply to Adopt {selectedPet.name}</h3>
+          {/* Pass selectedPet to the AdoptPetForm component */}
           <AdoptPetForm pet={selectedPet} />
         </div>
       )}

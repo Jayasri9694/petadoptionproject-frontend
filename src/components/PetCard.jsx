@@ -1,23 +1,22 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom for navigation
-
-const apibaseurl = "https://backend-petadoption-4.onrender.com";
+import { Link } from "react-router-dom"; 
+const apibaseurl = "https://fsd-backend-ilvh.onrender.com";
 
 const PetCard = ({ pet, onAdopt }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [adopted, setAdopted] = useState(false);  // Track if the pet has been adopted
-  const [adoptionDetails, setAdoptionDetails] = useState(null);  // Store the adoption details to display
+  const [adopted, setAdopted] = useState(false);  
+  const [adoptionDetails, setAdoptionDetails] = useState(null); 
 
   const handleAdopt = async () => {
     if (window.confirm(`Are you sure you want to adopt ${pet.name}?`)) {
       setLoading(true);
-      setError(null); // Reset previous error state
+      setError(null);
 
       try {
-        // Assuming you have a userId stored in the application context or localStorage
-        const userId = localStorage.getItem("userId"); // Modify this to your authentication flow
+        
+        const userId = localStorage.getItem("userId"); 
 
         if (!userId) {
           setError("User is not authenticated.");
@@ -40,18 +39,18 @@ const PetCard = ({ pet, onAdopt }) => {
         const data = await response.json();
 
         if (response.ok) {
-          // Successfully adopted the pet
-          setAdopted(true);  // Update adoption state
+          //
+          setAdopted(true);  
           setAdoptionDetails({
             name: pet.name,
             breed: pet.breed,
             age: pet.age,
             temperament: pet.temperament,
-            adoptionFee: pet.adoptionFee, // If you want to show adoption fee, assuming it exists
-            healthStatus: pet.healthStatus, // Assuming health status is available
+            adoptionFee: pet.adoptionFee, 
+            healthStatus: pet.healthStatus, 
           });
           alert(`Successfully adopted ${pet.name}!`);
-          onAdopt(pet);  // Call the onAdopt function to update parent state if needed
+          onAdopt(pet);  
         } else {
           throw new Error(data.message || "Adoption failed");
         }
@@ -88,7 +87,7 @@ const PetCard = ({ pet, onAdopt }) => {
         <button
           className="btn btn-primary"
           onClick={handleAdopt}
-          disabled={loading || adopted}  // Disable button if adoption is in progress or already adopted
+          disabled={loading || adopted} 
         >
           {loading ? "Adopting..." : adopted ? "Adopted" : "Adopt"}
         </button>
@@ -124,10 +123,10 @@ PetCard.propTypes = {
     breed: PropTypes.string.isRequired,
     age: PropTypes.number.isRequired,
     temperament: PropTypes.string.isRequired,
-    adoptionFee: PropTypes.number, // Optional: if you have adoption fee
-    healthStatus: PropTypes.string, // Optional: if you want to show health status
+    adoptionFee: PropTypes.number, 
+    healthStatus: PropTypes.string, 
   }).isRequired,
-  onAdopt: PropTypes.func.isRequired, // Function prop for adoption
+  onAdopt: PropTypes.func.isRequired, 
 };
 
 export default PetCard;

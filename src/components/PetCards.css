@@ -1,46 +1,98 @@
-/* PetCards.css */
+/* Container for all cards */
 .pet-cards-container {
-    display: flex;
-    flex-wrap: nowrap;  /* Keep the cards in a single row */
-    overflow-x: auto;   /* Allow horizontal scrolling if the row exceeds the container's width */
-    padding: 10px;
-    gap: 20px;  /* Space between pet cards */
-  }
-  
-  .pet-card {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between cards */
+  justify-content: flex-start; /* Align cards to the left */
+  padding: 20px;
+  background-color: transparent; /* Ensure transparent background */
+}
+
+/* Individual card styling */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px; /* Fixed width for each card */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Card image styling */
+.card-img-top {
+  width: 100%;
+  height: 200px; /* Fixed height for uniformity */
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Card content */
+.card-body {
+  padding: 15px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Buttons */
+.btn {
+  margin: 5px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-info {
+  background-color: #17a2b8;
+  border: none;
+}
+
+.btn-info:hover {
+  background-color: #117a8b;
+}
+
+/* Success alert for adoption confirmation */
+.alert-success {
+  margin-top: 15px;
+  padding: 10px;
+  font-size: 0.9rem;
+  text-align: left;
+  border: 1px solid #c3e6cb;
+  background-color: #d4edda;
+  border-radius: 5px;
+  color: #155724;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .pet-cards-container {
+    flex-direction: column; /* Stack cards vertically on small screens */
     align-items: center;
-    width: 200px; /* Width of each pet card */
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
   }
-  
-  .pet-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover; /* Ensure the image fits the container */
-    border-radius: 5px;
+
+  .card {
+    width: 100%; /* Full width for smaller screens */
   }
-  
-  .pet-info h3 {
-    margin: 10px 0;
-  }
-  
-  .adopt-btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .adopt-btn:hover {
-    background-color: #45a049;
-  }
-  
+}

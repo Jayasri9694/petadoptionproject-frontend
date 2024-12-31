@@ -1,14 +1,21 @@
-// React import removed as it's not used in this component
 import { Formik, Field, Form } from "formik";
 import * as Yup from "yup";
+import { useNavigate } from "react-router-dom";  // Import useNavigate for navigation
 import "./ApplicationForm.css";
 
 const ApplicationForm = () => {
+  const navigate = useNavigate();  // Initialize the navigation hook
+
   const handleSubmit = async (values, { resetForm }) => {
     try {
-      // Handle form submission (replace with API call)
+      // Handle form submission (you can replace this with an actual API call)
       alert("Application submitted successfully!");
+      
+      // Reset form after submission
       resetForm();
+      
+      // Navigate to the Adoption Confirmation page after submission
+      navigate('/adoption-confirmation');  // Redirect to the Adoption Confirmation page
     } catch (error) {
       console.error(error);
       alert("An error occurred while submitting your application.");
