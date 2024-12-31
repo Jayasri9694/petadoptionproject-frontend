@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom'; 
-import './petdetailspage.css';
+import "./petdetailspage.css";
 const PetDetailsPage = () => {
   const location = useLocation();
   const { pet } = location.state || {};
