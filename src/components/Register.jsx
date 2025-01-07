@@ -1,4 +1,4 @@
-import { Formik, Form, Field } from "formik";
+import { Formik, Form, Field } from "formik"; 
 import * as Yup from "yup";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -29,7 +29,7 @@ const Register = () => {
 
   // Validation schema using Yup
   const validationSchema = Yup.object({
-    name: Yup.string().required("Name is required"),
+    username: Yup.string().required("Username is required"),
     email: Yup.string().email("Invalid email format").required("Email is required"),
     password: Yup.string()
       .min(6, "Password must be at least 6 characters long")
@@ -41,21 +41,21 @@ const Register = () => {
       <div className="register-form">
         <h1>Register</h1>
         <Formik
-          initialValues={{ name: "", email: "", password: "" }}
+          initialValues={{ username: "", email: "", password: "" }}
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
         >
           {({ errors, touched }) => (
             <Form>
-              {/* Name Field */}
+              {/* Username Field */}
               <div className="form-group">
                 <Field
-                  name="name"
-                  placeholder="Name"
-                  className={`form-control ${errors.name && touched.name ? "is-invalid" : ""}`}
+                  name="username"
+                  placeholder="Username"
+                  className={`form-control ${errors.username && touched.username ? "is-invalid" : ""}`}
                 />
-                {errors.name && touched.name && (
-                  <div className="error-text">{errors.name}</div>
+                {errors.username && touched.username && (
+                  <div className="error-text">{errors.username}</div>
                 )}
               </div>
 

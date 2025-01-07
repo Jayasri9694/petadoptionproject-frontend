@@ -17,6 +17,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  background-color: transparent; /* Set background of the card to transparent */
   transition: transform 0.3s ease-in-out;
 }
 

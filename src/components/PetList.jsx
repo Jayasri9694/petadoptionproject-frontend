@@ -74,10 +74,6 @@ const PetList = () => {
     <div className="pet-list-container">
       {isLoggedIn ? (
         <>
-          <h2>Available Pets for Adoption</h2>
-
-        
-
           {/* Pet list */}
           <div className="pet-list">
             {filteredPets.length > 0 ? (
