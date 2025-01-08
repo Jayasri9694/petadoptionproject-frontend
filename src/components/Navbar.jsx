@@ -23,7 +23,7 @@ const Navbar = () => {
         <li><a href="/adopt">Adopt a Pet</a></li>
         <li><a href="/adopt-pet-form">Application Form</a></li>
         <li><a href="/about">About</a></li>
-        
+        <li><a href="/Feedback">Feedback</a></li>
         {isAuthenticated ? (
           <>
             <li><button onClick={handleLogout} className="btn btn-secondary">Logout</button></li>

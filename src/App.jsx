@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Home from "./pages/Home";
-import AdoptPet from "./pages/AdoptPet";
+import AdoptPet from './pages/AdoptPet';
 import Register from "./components/Register";
 import Login from "./components/Login";
 import { AuthProvider } from "./context/AuthContext";
@@ -11,7 +11,7 @@ import Logout from "./components/Logout";
 import PetDetailsPage from "./pages/PetDetailsPage";
 import About from "./components/About";
 import AdoptionConfirmation from "./components/AdoptionConfirmation";
-
+import Feedback from "./components/Feedback";
 
 const App = () => {
   return (
@@ -29,6 +29,7 @@ const App = () => {
             <Route path="/pet-details" element={<PetDetailsPage />} /> 
             <Route path="about" element={<About />} />
             <Route path="/logout" element={<Logout />} />
+          <Route path="/Feedback" element={<Feedback/>}/>
           </Routes>
         </div>
       </Router>

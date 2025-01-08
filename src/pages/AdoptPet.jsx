@@ -3,7 +3,7 @@ import PetList from "../components/PetList";
 import { useState, useEffect } from "react";
 import AdoptPetForm from "../components/ApplicationForm.jsx";  // Import ApplicationForm component
 import axios from "axios";  // Import axios for API requests
-
+import './adoptpet.css';
 const apibaseurl = "https://adopt-backend-1.onrender.com";  // API base URL
 
 const AdoptPet = () => {
@@ -16,7 +16,7 @@ const AdoptPet = () => {
       const token = localStorage.getItem("token");  // Retrieve the token from localStorage
       if (!token) {
         console.log("No token found. User might not be logged in.");
-        return;  // If no token is found, stop the request
+        return;
       }
 
       try {
