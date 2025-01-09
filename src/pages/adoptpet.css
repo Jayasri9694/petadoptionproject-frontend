@@ -1,151 +1,60 @@
-/* General styling for the adopt-pet-container */
+/* Overall container styling */
 .adopt-pet-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9; /* Light background for the container */
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Header section */
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+/* Error message styling */
+.error-message {
+  color: red;
+  font-size: 1.1rem;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+/* Application form container */
+.application-form-container {
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+/* Responsive styles for mobile screens */
+@media (max-width: 768px) {
+  .adopt-pet-container {
+    padding: 0.5rem;
   }
-  
-  /* Header for the Adopt a Pet page */
-  .adopt-pet-container h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-    font-size: 2rem;
-    font-weight: bold;
+
+  .header h1 {
+    font-size: 1.8rem;
   }
-  
-  /* Pet list container */
-  .pet-list-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  /* Individual pet card */
-  .pet-card {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 250px;
-    text-align: center;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  }
-  
-  .pet-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Pet image styling */
-  .pet-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 2px solid #f1f1f1;
-  }
-  
-  /* Pet name and details */
-  .pet-card h3 {
-    font-size: 1.2rem;
-    color: #555;
-    margin: 10px 0;
-  }
-  
-  .pet-card p {
+
+  .header p {
     font-size: 1rem;
-    color: #777;
-    margin: 0 10px 10px;
   }
-  
-  /* Button for selecting a pet */
-  .pet-card button {
-    background-color: #ff6b6b;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    margin-bottom: 10px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .pet-card button:hover {
-    background-color: #ff4a4a;
-  }
-  
-  /* Application form container styling */
+
   .application-form-container {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+    padding: 0.5rem;
   }
-  
-  .application-form-container h3 {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 15px;
-    text-align: center;
-  }
-  
-  /* General form styling */
-  .application-form-container form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .application-form-container input,
-  .application-form-container textarea {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    width: 100%;
-  }
-  
-  .application-form-container textarea {
-    resize: none;
-    height: 100px;
-  }
-  
-  .application-form-container button {
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .application-form-container button:hover {
-    background-color: #45a049;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .pet-list-container {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .pet-card {
-      width: 100%;
-    }
-  
-    .application-form-container {
-      padding: 15px;
-    }
-  }
-  
+}

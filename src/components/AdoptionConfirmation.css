@@ -1,73 +1,87 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+/* Base Styles */
+.confirmation-container {
+  text-align: center;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.confirmation-container h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.confirmation-container p {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.back-home-button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.back-home-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .confirmation-container h1 {
+    font-size: 1.8rem;
   }
-  
-  /* Confirmation Container */
-  .adoption-confirmation-container {
-    background-color: white;
-    width: 100%;
-    max-width: 500px;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    font-family: Arial;
+
+  .confirmation-container p {
+    font-size: 0.95rem;
   }
-  
-  /* Title */
-  .adoption-confirmation-container h1 {
-    font-size: 2rem;
-    color: #4caf50;
-    margin-bottom: 1.5rem;
-  }
-  
-  /* Message */
-  .adoption-confirmation-container p {
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 2rem;
-    line-height: 1.5;
-  }
-  
-  /* Back Button */
-  .adoption-confirmation-container .back-button {
-    width: 100%;
-    padding: 0.8rem;
-    background-color: #007BFF;
-    color: white;
-    font-size: 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .adoption-confirmation-container .back-button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Footer or Links */
-  .adoption-confirmation-container .footer {
-    text-align: center;
+
+  .back-home-button {
+    padding: 0.5rem 1rem;
     font-size: 0.9rem;
-    color: #555;
-    margin-top: 2rem;
   }
-  
-  .adoption-confirmation-container .footer a {
-    color: #007BFF;
-    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .confirmation-container {
+    padding: 1.5rem;
   }
-  
-  .adoption-confirmation-container .footer a:hover {
-    text-decoration: underline;
+
+  .confirmation-container h1 {
+    font-size: 1.6rem;
   }
-  
+
+  .confirmation-container p {
+    font-size: 0.9rem;
+  }
+
+  .back-home-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .confirmation-container {
+    padding: 1rem;
+  }
+
+  .confirmation-container h1 {
+    font-size: 1.4rem;
+  }
+
+  .confirmation-container p {
+    font-size: 0.85rem;
+  }
+
+  .back-home-button {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+  }
+}

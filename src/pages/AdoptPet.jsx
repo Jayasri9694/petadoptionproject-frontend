@@ -1,19 +1,20 @@
 // Importing necessary components and hooks
 import PetList from "../components/PetList";
 import { useState, useEffect } from "react";
-import AdoptPetForm from "../components/ApplicationForm.jsx";  // Import ApplicationForm component
+import AdoptPetForm from "../components/ApplicationForm";  // Import the Adoption Form component
 import axios from "axios";  // Import axios for API requests
-import './adoptpet.css';
+import './adoptpet.css';  // Import custom CSS file
+
 const apibaseurl = "https://adopt-backend-1.onrender.com";  // API base URL
 
 const AdoptPet = () => {
-  const [pets, setPets] = useState([]);  // State to hold fetched pets
+  const [pets, setPets] = useState([]);  // State to hold the fetched pets
   const [selectedPet, setSelectedPet] = useState(null);  // State to store the selected pet for adoption
 
-  // Fetching pets data with Authorization header
+  // Fetching pets data from the backend with authorization
   useEffect(() => {
     const fetchPets = async () => {
-      const token = localStorage.getItem("token");  // Retrieve the token from localStorage
+      const token = localStorage.getItem("token");  // Get the token from localStorage
       if (!token) {
         console.log("No token found. User might not be logged in.");
         return;
@@ -22,7 +23,7 @@ const AdoptPet = () => {
       try {
         const response = await axios.get(`${apibaseurl}/api/pets`, {
           headers: {
-            Authorization: `Bearer ${token}`, // Pass the token as Authorization header
+            Authorization: `Bearer ${token}`,  // Pass the token in Authorization header
           },
         });
         setPets(response.data);  // Update pets state with the fetched data
@@ -32,10 +33,10 @@ const AdoptPet = () => {
     };
 
     fetchPets();
-  }, []);  // Empty dependency array means it runs once when the component is mounted
+  }, []);  // Empty dependency array means it runs once when the component mounts
 
   const handlePetSelect = (pet) => {
-    setSelectedPet(pet);  // When a pet is selected, update the selectedPet state
+    setSelectedPet(pet);  // When a pet is selected, set it as the selected pet
   };
 
   return (
@@ -44,7 +45,7 @@ const AdoptPet = () => {
       {/* Passing pets and handlePetSelect as props to PetList component */}
       <PetList pets={pets} onPetSelect={handlePetSelect} />
 
-      {/* Conditionally render the ApplicationForm if a pet is selected */}
+      {/* Conditionally render the Adoption Form when a pet is selected */}
       {selectedPet && (
         <div className="application-form-container">
           <h3>Apply to Adopt {selectedPet.name}</h3>

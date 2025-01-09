@@ -1,0 +1,85 @@
+.card {
+  width: 18rem;
+  margin: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.card-text br {
+  margin-bottom: 0.5rem;
+}
+
+.card .btn {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.card .btn-info {
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.card .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.card .btn:disabled {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.text-danger {
+  font-size: 0.875rem;
+  color: #dc3545;
+  margin-top: 1rem;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border-color: #c3e6cb;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.alert-success h5 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.alert-success p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.alert-success p strong {
+  font-weight: bold;
+}

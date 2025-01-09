@@ -10,6 +10,7 @@ import ApplicationForm from "./components/ApplicationForm";
 import Logout from "./components/Logout";
 import PetDetailsPage from "./pages/PetDetailsPage";
 import About from "./components/About";
+import ContactUs from "./components/ContactUs";
 import AdoptionConfirmation from "./components/AdoptionConfirmation";
 import Feedback from "./components/Feedback";
 
@@ -29,6 +30,7 @@ const App = () => {
             <Route path="/pet-details" element={<PetDetailsPage />} /> 
             <Route path="about" element={<About />} />
             <Route path="/logout" element={<Logout />} />
+            <Route path="/Contact" element={<ContactUs/>}/>
           <Route path="/Feedback" element={<Feedback/>}/>
           </Routes>
         </div>

@@ -1,45 +1,67 @@
 .pet-details {
-    max-width: 800px;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     padding: 20px;
-    font-family: Arial, sans-serif;
-    
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.pet-details h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    color: hsl(0, 0%, 4%);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .pet-info {
     text-align: center;
-}
-
-.pet-details p {
-    font-size: 1.1rem;
+    background-color: #f8f9fa;
+    padding: 30px;
+    margin-top:30px;
+    border-radius: 100px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pet-info h2 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .pet-info p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .pet-description {
+    font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 15px;
-    color: #fcf8fb;
-    font-family: "Diphylleia", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.pet-details p strong {
-    font-weight: bold;
-    color: hsl(0, 0%, 4%);
-}
-
-@media (max-width: 600px) {
+    color: #ece8e8;
+    text-align: justify;
+  }
+  
+  @media (min-width: 768px) {
     .pet-details {
-        padding: 15px;
+      flex-direction: row;
+      justify-content: space-between;
     }
-
-    .pet-details h2 {
-        font-size: 1.5rem;
+  
+    .pet-info {
+      flex: 1;
+      padding: 30px;
+      margin-right: 20px;
     }
-
-    .pet-details p {
-        font-size: 0.9rem;
+  
+    .pet-description {
+      flex: 2;
+      padding: 20px;
     }
-}
+  }
+  
+  @media (max-width: 767px) {
+    .pet-info h2 {
+      font-size: 1.5rem;
+    }
+  
+    .pet-info p {
+      font-size: 0.9rem;
+    }
+  
+    .pet-description {
+      font-size: 0.9rem;
+    }
+  }
+  
