@@ -1,46 +1,91 @@
-import React from 'react';
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaInstagram } from 'react-icons/fa';
-import './contact.css';
-const Contact = () => {
+import React, { useState } from "react";
+import "./Contact.css";
+
+const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const [successMessage, setSuccessMessage] = useState("");
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Simulate form submission logic (e.g., API call)
+    setSuccessMessage("Your inquiry has been sent successfully. We will respond shortly.");
+    setFormData({ name: "", email: "", subject: "", message: "" }); // Clear the form
+  };
+
   return (
     <div className="contact-container">
-      <h2>Contact Us</h2>
-      <div className="contact-info">
-        <div className="contact-item">
-          <FaMapMarkerAlt className="contact-icon" />
-          <div>
-            <h4>Address</h4>
-            <p>1234 Pet Adoption St., Animal City, Petland,dubai</p>
-          </div>
+      <h1 className="contact-title">Contact Us</h1>
+      <p className="contact-description">
+        Have questions about pet adoption or need support? Get in touch with us by filling out the form below.
+      </p>
+      <form className="contact-form" onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
         </div>
-        <div className="contact-item">
-          <FaPhoneAlt className="contact-icon" />
-          <div>
-            <h4>Contact Number</h4>
-            <p>+1 (123) 456-7890</p>
-          </div>
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
         </div>
-        <div className="contact-item">
-          <FaEnvelope className="contact-icon" />
-          <div>
-            <h4>Email</h4>
-            <p>info@petadoption.com</p>
-          </div>
+        <div className="form-group">
+          <label htmlFor="subject">Subject</label>
+          <select
+            id="subject"
+            name="subject"
+            value={formData.subject}
+            onChange={handleChange}
+            required
+          >
+            <option value="" disabled>Select a subject</option>
+            <option value="Adoption Inquiry">Adoption Inquiry</option>
+            <option value="Pet Listing Help">Pet Listing Help</option>
+            <option value="General Support">General Support</option>
+            <option value="Other">Other</option>
+          </select>
         </div>
-        <div className="contact-item">
-          <FaInstagram className="contact-icon" />
-          <div>
-            <h4>Instagram</h4>
-            <p>
-              <a href="https://www.instagram.com/petadoption/" target="_blank" rel="noopener noreferrer">
-                @petadoption
-              </a>
-            </p>
-          </div>
+        <div className="form-group">
+          <label htmlFor="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Write your message here"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          ></textarea>
         </div>
-      </div>
+        <button type="submit" className="contact-submit-btn">Send Message</button>
+      </form>
+      {successMessage && <p className="success-message">{successMessage}</p>}
     </div>
   );
 };
 
-export default Contact;
+export default ContactUs;
