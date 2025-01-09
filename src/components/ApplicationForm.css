@@ -1,35 +1,68 @@
-/* ApplicationForm.css */
 .application-form-container {
+  max-width: 600px;
+  margin: 0 auto;
   padding: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.pet-details img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 5px;
+.application-form-container h1 {
+  text-align: center;
+  color: #343a40;
+  margin-bottom: 20px;
 }
 
-form div {
-  margin-bottom: 10px;
+.application-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-form input,
-form textarea {
-  width: 100%;
+.application-form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.application-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #495057;
+}
+
+.application-form input,
+.application-form textarea {
   padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.application-form input:focus,
+.application-form textarea:focus {
+  outline: none;
+  border-color: #007BFF;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+.application-form .error {
+  color: #dc3545;
+  font-size: 14px;
   margin-top: 5px;
 }
 
-button {
-  background-color: #4CAF50;
-  color: rgb(96, 14, 14);
-  padding: 10px 20px;
+.application-form button {
+  background-color: #007bff;
+  color: #fff;
   border: none;
   border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #45a049;
+.application-form button:hover {
+  background-color: #0056b3;
 }

@@ -1,7 +1,7 @@
 import { Formik, Field, Form } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";  // Import useNavigate for navigation
-import "./ApplicationForm.css";
+import './ApplicationForm.css';
 
 const ApplicationForm = () => {
   const navigate = useNavigate();  // Initialize the navigation hook
